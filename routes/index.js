@@ -1,9 +1,19 @@
 var express = require('express');
 var router = express.Router();
 
+const templateTypes = [
+  { name : "Jade", usefulness : "sucky." },
+  { name : "EJS", usefulness : "a little better.." },
+  { name : "Handlebars", usefulness : "the best." }
+]
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', message : "I really hate Jade views." });
+  res.render('index', {
+    title: 'Express',
+    message : "I like EJS.",
+    templates: templateTypes
+  });
 });
 
 module.exports = router;
